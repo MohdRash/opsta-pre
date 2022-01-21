@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Comming Soon | OPSTAWORLD</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="OPSTAworld is a great startup aimed to change the education system into a modern one" />
+        <meta name="keywords" content="Coming Soon" />
+        <meta name="author" content="Forgottenage" />
+        <meta name="email" content="info@opstaworld.com" />
+        <meta name="website" content="https://opstaworld.com" />
+        <!-- <meta name="Version" content="v3.8.0" /> -->
+        <!-- favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- Icons -->
+        <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+        <!-- Main Css -->
+        <link href="css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="css/colors/default.css" rel="stylesheet" id="color-opt">
+
+        <!-- sweet alert -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <!-- ajax -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    </head>
+
+    <body>
+        <!-- Loader -->
+        <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Loader -->
+        
+        <!-- <div class="back-to-home rounded d-none d-sm-block">
+            <a href="index.html" class="btn btn-icon btn-primary"><i data-feather="home" class="icons"></i></a>
+        </div> -->
+
+        <!-- COMING SOON PAGE -->
+        <video autoplay muted loop style="position: absolute; right: 0; bottom: 0; min-width: 100%;  min-height: 100%;">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            <!--Here is your webm not YouTube-->
+
+            <!-- <source src="images/1.mp4" type="video/mp4"> -->
+            <!-- Here is your videos path link -->
+        </video>
+        <section class="bg-home bg-animation-left dark-left d-flex align-items-center" id="home">
+            <div class="container position-relative text-md-start text-center" style="z-index: 1;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="javascript:void(0)" class="logo h5 text-white">OPSTAWORLD</a>
+                        <!-- <img src="images/logo-light.png" height="24" alt=""> -->
+                        <h1 class="text-uppercase text-white title-dark mt-2 mb-4 coming-soon"><span class="text-white typewrite" data-period="2000" data-type='[ "We are Coming soon...", "We are Be Ready to", "We are Connected with us" ]'> <span class="wrap"></span> </span></h1>
+                        <p class="text-light para-dark para-desc">We Start working with <span class="fw-bold">OPSTAWORLD</span> that can provide everything you need to generate awareness, better education system, connect.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="countdown">
+                            <ul class="count-down list-unstyled">
+                                <li id="days" class="count-number list-inline-item m-2"></li>
+                                <li id="hours" class="count-number list-inline-item m-2"></li>
+                                <li id="mins" class="count-number list-inline-item m-2"></li>
+                                <li id="secs" class="count-number list-inline-item m-2"></li>
+                                <li id="end" class="h1"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">  
+                        <a href="index.html" data-bs-toggle="modal" data-bs-target="#LoginForm" class="btn btn-primary mt-4 me-2"><img style="filter: brightness(0) invert(1);" src="./images/icon/notification.png" alt="notify" width="20px" /> Notify Me</a>
+                    </div>
+                </div>
+            </div> <!-- end container -->
+        </section>
+        <!-- COMING SOON PAGE -->
+
+        <!-- Subscribe start -->
+        <div class="modal fade" id="LoginForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content rounded shadow border-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Notify Me</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="bg-white p-3 rounded box-shadow">
+                            <p>We are comingsoon. Please, Enter your mail id to get notified.</p>
+                            <div class="input-group mb-3">
+                                <form id="gform" method="post" action="">
+                                    <label>Enter email</label>
+                                    <input name="email" id="email2" type="email" class="form-control mb-3" placeholder="Your Email :" required="">
+                                    <button class="btn btn-primary submitBnt" type="submit" id="email">Get Notified</button>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Subscribe end -->
+
+        <!-- Script for form -->
+        <script>
+
+            $("#gform").submit((e)=>{
+				e.preventDefault()
+				$.ajax({
+					url:"https://script.google.com/macros/s/AKfycbzOK6OCehQaulSr7u1adiEptK-JdzW64M7f26JPZ2gzkkhgTpW1-CXLQnTx0wTOwL4XhQ/exec",
+					data:$("#gform").serialize(),
+					method:"post",
+					success:function (response){
+						// alert("Form submitted successfully")
+						Swal.fire({
+							title: "<h3 style='color: green;'>Success!</h3>", 
+							type: "success",
+							icon: "success",
+							html: "We will get back to you soon!",  
+							confirmButtonText: "<h4 style='color: white;'>Close</h4>",
+							confirmButtonColor: "#4790ff",
+							allowOutsideClick: "true"  
+						});
+					},
+					error:function (err){
+						Swal.fire({
+							title: "<h3 style='color: red;'>uh oh!</h3>",
+							type: "failed",
+							icon: "error", 
+							html: "Something seems wrong! try again!",  
+							confirmButtonText: "<h4 style='color: white;'>Close</h4>",
+							confirmButtonColor: "red",
+							allowOutsideClick: "true"  
+						});
+		
+					}
+				})
+			})
+        </script>
+        <!-- Script for form ends-->
+
+        
+
+        <!-- javascript -->
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <!-- Icons -->
+        <script src="js/feather.min.js"></script>
+        <!-- Switcher -->
+        <script src="js/switcher.js"></script>
+        <!-- Main Js -->
+        <script src="js/plugins.init.js"></script><!--Note: All init js like tiny slider, counter, countdown, maintenance, lightbox, gallery, swiper slider, aos animation etc.-->
+        <script src="js/app.js"></script><!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
+    </body>
+</html>
